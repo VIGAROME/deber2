@@ -1,0 +1,15 @@
+TARGET = prog
+OBJFILES = estructura.o metodos.o regDatosOpciones.o 
+
+
+all: $(@TARGET)
+
+$(TARGET):$(OBJFILES)
+	gcc $(OBJFILES) -o $(TARGET)
+
+%.o:%.c
+	gcc -c $< -o $@
+
+clean:
+	rm -f $(OBJFILES) $(TARGET)
+
